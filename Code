@@ -1,0 +1,69 @@
+import pandas as pd
+
+url = "https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user"
+user_id = pd.read_csv(url, sep = "|")
+user_id.head()
+
+user_id.head(25)
+
+user_id.tail(10)
+
+# What is the number of observations in the dataset?
+
+user_id.shape[0]
+
+# What is the number of columns in the dataset?
+
+user_id.shape[1]
+
+
+# Print the name of all the columns
+
+user_id.columns
+
+
+# How is the dataset indexed?
+user_id.index
+
+
+# What is the data type of each column?
+
+user_id.dtypes
+
+
+# Print only the occupation column
+
+user_id["occupation"].head()
+#user_i.occupaiton.head()
+
+
+# How many different occupations are in this dataset?
+#user_id.occupation.nunique()
+user_id.occupation.value_counts().count()
+
+
+# What is the most frequent occupation?
+
+user_id.occupation.value_counts().head(1)
+
+# Summarize the DataFrame
+
+user_id.describe()
+
+
+# Summarize all the columns
+user_id.describe(include = "all")
+
+
+# Summarize only the occupation column
+user_id["occupation"].describe()
+
+
+# What is the mean age of users?
+
+user_id["age"].mean()
+
+
+# What is the age with least occurrence?
+
+user_id.age.value_counts().tail()
